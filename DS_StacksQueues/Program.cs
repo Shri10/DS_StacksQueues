@@ -15,6 +15,7 @@
             Push(stack, 56);
 
             Console.WriteLine();
+            Console.WriteLine("Stack after Pushing elements:");
             DisplayStack(stack);
             Console.WriteLine();
 
@@ -37,8 +38,26 @@
             Enqueue(queue, 70);
 
             Console.WriteLine();
+            Console.WriteLine("Queue after enqueuing elements:");
             DisplayQueue(queue);
             Console.WriteLine();
+
+            //Console.WriteLine($"We are Dequeueing the element {queue.First.Value}");
+            Dequeue(queue);
+            Console.WriteLine($"Stack size is {queue.Count}");
+
+            Console.WriteLine();
+            
+            
+            //Console.WriteLine($"We are Dequeueing the element {queue.First.Value}");
+            Dequeue(queue);
+            Console.WriteLine($"Stack size is {queue.Count}");
+
+            Console.WriteLine();
+
+            //Console.WriteLine($"We are Dequeueing the element {queue.First.Value}");
+            Dequeue(queue);
+            Console.WriteLine($"Stack size is {queue.Count}");
 
         }
 
@@ -76,6 +95,19 @@
         static void Enqueue(LinkedList<int> queue, int data)
         {
             queue.AddLast(data);
+        }
+
+        static void Dequeue(LinkedList<int> queue)
+        {
+            if (queue.Count == 0)
+            {
+                Console.WriteLine("The queue is empty.");
+            }
+            else
+            {
+                Console.WriteLine("Dequeued element: " + queue.First.Value);
+                queue.RemoveFirst();
+            }
         }
 
         static void DisplayQueue(LinkedList<int> queue)
