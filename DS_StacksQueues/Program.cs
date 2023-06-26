@@ -5,6 +5,8 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Data Structures, Demonstration and Implmentation of Stacks and Queues!\n");
+            
+            Console.WriteLine("First the Stack.");
 
             LinkedList<int> stack = new LinkedList<int>();
 
@@ -13,7 +15,7 @@
             Push(stack, 56);
 
             Console.WriteLine();
-            Display(stack);
+            DisplayStack(stack);
             Console.WriteLine();
 
             while (stack.Count > 0)
@@ -23,8 +25,24 @@
                 Console.WriteLine($"Stack size is {stack.Count}");
                 Console.WriteLine();
             }
+
+            Console.WriteLine();
+            
+            Console.WriteLine("Now the Queue.");
+
+            LinkedList<int> queue = new LinkedList<int>();
+
+            Enqueue(queue, 56);
+            Enqueue(queue, 30);
+            Enqueue(queue, 70);
+
+            Console.WriteLine();
+            DisplayQueue(queue);
+            Console.WriteLine();
+
         }
 
+        ///STACK
         static void Push(LinkedList<int> stack, int data)
         {
             stack.AddFirst(data);
@@ -42,7 +60,7 @@
             return stack.First.Value;
         }
 
-        static void Display(LinkedList<int> stack)
+        static void DisplayStack(LinkedList<int> stack)
         {
             var node = stack.First;
 
@@ -52,5 +70,22 @@
                 node = node.Next;
             }
         }
+        ///STACK DONE
+
+        ///QUEUE
+        static void Enqueue(LinkedList<int> queue, int data)
+        {
+            queue.AddLast(data);
+        }
+
+        static void DisplayQueue(LinkedList<int> queue)
+        {
+            foreach (int item in queue)
+            {
+                Console.WriteLine(item);
+            }
+        }
+        ///QUEUE DONE
+
     }
 }
